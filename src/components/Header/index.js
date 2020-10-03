@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'wouter'
 import './styles.css'
 
-import SectionButton from '../SectionButton/index'
+import SectionButton from 'components/SectionButton/index'
 
 function HeaderTitel () {
     return  <>

@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from '../../images/marisell.png'
+import avatar from 'images/marisell.png'
 
 function Home () {
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'wouter'
 import './styles.css'
 
-import {useThemes} from '../../hooks/useThemes'
+import {useThemes} from 'hooks/useThemes'
 
 function NavThemes () {
 

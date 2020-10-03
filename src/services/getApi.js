@@ -1,8 +1,9 @@
 import {API_URL} from './settings'
 
-export default function getApi ({Rout=''} = {}) {
-  const apiURL = `${API_URL}/${Rout}`
+export default function getApi ({Rout='',id=null,theme=null} = {}) {
 
-  return fetch(apiURL)
-    .then(res => res.json())
+  const apiURL = `${API_URL}/${Rout}${(id||theme)?'?':''}${id?'id='+id+'&':''}${theme?'genero='+theme+'&':''}`
+console.log('url api = ',apiURL);
+  return fetch(apiURL).then(res => res.json())
+  
 }
