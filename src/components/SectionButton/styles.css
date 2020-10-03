@@ -1,0 +1,27 @@
+div.SectionButton {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin-top: 0.3rem;
+  margin-right: 4rem;
+}
+
+div.SectionButton p {
+  margin: 0em 1em;
+  background: url(../../images/bg-waves.png) center center/cover no-repeat;
+  background-color: #ecf3c8;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: inset #f98 -2px -2px 4px 2px;
+          box-shadow: inset #f98 -2px -2px 4px 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+div.SectionButton p:hover {
+  background-color: azure;
+  -webkit-box-shadow: inset #f98 2px 2px 4px 2px;
+          box-shadow: inset #f98 2px 2px 4px 2px;
+}
+/*# sourceMappingURL=styles.css.map */

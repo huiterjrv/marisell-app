@@ -1,0 +1,29 @@
+
+//variables
+$boton-fondo: url(../../images/bg-waves.png) center center / cover no-repeat;
+$boton-color-fondo: #c29e3587;
+$boton-color-fondo-hover: #dda60487;
+$boton-sombra-caja: #f98 1px 3px 4px;
+$boton-borde: 0em 2em 0.5em 2em;
+
+$font-Titulo: 'Satisfy', cursive;
+$font-Escrito: 'Special Elite', cursive;
+$font-TiPrincipal: 'Henny Penny', cursive;
+$font-sombra: 3px 4px 4px;
+
+//mixin 
+
+@mixin boton {
+    margin: 0.5em 0em;
+    padding: 0.5em 1em;
+    background: $boton-fondo;
+    background-color: $boton-color-fondo;
+    border-radius: $boton-borde;
+    text-align: center;
+    box-shadow:$boton-sombra-caja;
+    cursor: pointer;
+    &:hover {
+        background-color: $boton-color-fondo-hover;
+        box-shadow: inset$boton-sombra-caja;
+    }
+}
