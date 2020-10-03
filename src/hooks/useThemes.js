@@ -3,16 +3,16 @@ import getApi from 'services/getApi'
 
 import ThemesContext from 'context/ThemesContext'
 
-export function useThemes({Rout,id,theme}) {
+export function useThemes({rout,id,theme}) {
 
     const {themes, setThemes} = useContext(ThemesContext)
 
     useEffect(()=>{
 
-        getApi({Rout,id,theme})
+        getApi({rout,id,theme})
         .then(res => setThemes(res))
 
-    },[Rout,id,theme,setThemes])
+    },[rout,id,theme,setThemes])
 
     return { themes, setThemes }
 }

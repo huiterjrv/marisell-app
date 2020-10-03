@@ -1,9 +1,11 @@
 import React, {} from 'react'
 
-function Writtens () {
-
+function Writtens ({writtens}) {
+console.log(writtens);
     return <>
-        <p>hola</p>
+        {
+            writtens.map(written => <p key={written._id} >{written.texto}</p> )
+        }
     </>
 }
 

@@ -6,7 +6,7 @@ import {useThemes} from 'hooks/useThemes'
 
 function NavThemes () {
 
-    const { themes } = useThemes({Rout:'kind'})
+    const { themes } = useThemes({rout:'kind'})
 
     return <>
         <nav>
