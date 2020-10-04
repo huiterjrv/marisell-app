@@ -9,7 +9,10 @@ import HeadingTitel from 'components/Header'
 import NavThemes from 'components/Nav'
 import {ThemesContextProvider} from 'context/ThemesContext'
 import Container from 'pages/Conteiner'
-import Home from 'pages/home'
+import Home from 'pages/Home'
+import NavPage from 'components/NavPage'
+import Admin from 'pages/Admin';
+import EditAdmin from 'pages/EditAdmin'
 
 function App() {
 
@@ -20,11 +23,13 @@ function App() {
       <HeadingTitel />
       <div className='container-app'>
         <aside>
-
+          <NavPage />
         </aside>
         <main className='container'>
           <Route path='/' component={Home} />
-          <Route path='/:route' component={Container} />
+          <Route path='/admin' component={Admin} />
+          <Route path='/admin/:route' component={EditAdmin} />
+          <Route path='/writtens/:route' component={Container} />
         </main>
         <aside>
           <NavThemes />

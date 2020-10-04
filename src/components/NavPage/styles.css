@@ -1,12 +1,11 @@
-nav.nav-themes {
+nav.nav-page {
   margin-top: 10vw;
   position: fixed;
-  font-size: 1vw !important;
-  margin-left: 1rem;
-  width: 10vw;
+  width: 12vw;
 }
 
-nav.nav-themes p {
+nav.nav-page p {
+  width: 80%;
   margin: 0.5em 0em;
   padding: 0.5em 1em;
   background: url(../../images/bg-waves.png) center center/cover no-repeat;
@@ -16,11 +15,30 @@ nav.nav-themes p {
   -webkit-box-shadow: #f98 1px 3px 4px;
           box-shadow: #f98 1px 3px 4px;
   cursor: pointer;
+  padding: 0.5em;
+  border-radius: 0em 2em 0.5em 0em;
+  -webkit-transition: 0.5S;
+  transition: 0.5S;
+  background-color: white;
 }
 
-nav.nav-themes p:hover {
+nav.nav-page p:hover {
   background-color: #dda60487;
   -webkit-box-shadow: inset #f98 1px 3px 4px;
           box-shadow: inset #f98 1px 3px 4px;
+}
+
+nav.nav-page p:hover {
+  width: 100%;
+  -webkit-transition: 0.5S;
+  transition: 0.5S;
+}
+
+nav.nav-page p:nth-child(2n) {
+  background-color: #55fbff8c;
+}
+
+nav.nav-page p:nth-child(3n) {
+  background-color: #c255ff8c;
 }
 /*# sourceMappingURL=styles.css.map */

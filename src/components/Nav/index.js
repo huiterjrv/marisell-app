@@ -9,9 +9,9 @@ function NavThemes () {
     const { themes } = useThemes({rout:'kind'})
 
     return <>
-        <nav>
+        <nav className='nav-themes'>
             {
-                themes.map(item => <Link to={`/${item.categoria}`} key={item._id} ><p >{item.categoria}</p></Link>)
+                themes.map(item => <Link to={`/writtens/${item.categoria}`} key={item._id} ><p >{item.categoria}</p></Link>)
             }
         </nav>
     </>
