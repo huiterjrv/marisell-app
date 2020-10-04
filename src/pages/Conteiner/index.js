@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 
 import getApi from 'services/getApi'
-import WrittenList from 'components/writtens'
+import WrittenList from 'components/Writtens'
 
 function Container ({ params }) {
 

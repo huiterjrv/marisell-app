@@ -8,6 +8,7 @@ function TableCategory ({ categories }) {
         <table className="w3-table w3-bordered w3-hoverable">
             <thead>
                 <tr>
+                    <th>preview</th>
                     <th>Genero</th>
                     <th>Color</th>
                     <th>Fondo</th>

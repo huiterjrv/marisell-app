@@ -19,7 +19,7 @@ function CreateWritten ({ params }) {
     switch (params.route) {
 
         case 'written':
-                return <Written Writtens={content} />
+                return <Written writtens={content} />
 
         case 'kind':
                 return <Kind kinds={content} />
