@@ -1,0 +1,33 @@
+@import '../../variables';
+
+$color-collection: ('#55fbff8c','#c255ff8c','#63ff558c');
+
+nav.nav-page {
+    margin-top: 10vw;
+    position: fixed;
+    width: 12vw;
+
+    p {
+        width: 80%;
+        @include boton;
+
+        padding: 0.5em;
+        border-radius: 0em 2em 0.5em 0em;
+        transition: 0.5S;
+        background-color: lighten( #f98, 50%);
+        &:hover {
+            width: 100%;
+            transition: 0.5S;
+        }
+
+    }
+
+    p:nth-child(2n) {
+        background-color: unquote(nth($color-collection, 1));
+    }
+
+    p:nth-child(3n) {
+        background-color: unquote(nth($color-collection, 2))
+    }
+
+}
