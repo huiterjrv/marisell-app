@@ -1,0 +1,26 @@
+nav {
+  margin-top: 10vw;
+  position: fixed;
+  font-size: 1vw !important;
+  margin-left: 1rem;
+  width: 10vw;
+}
+
+nav p {
+  margin: 0.5em 0em;
+  padding: 0.5em 1em;
+  background: url(../../images/bg-waves.png) center center/cover no-repeat;
+  background-color: #c29e3587;
+  border-radius: 0em 2em 0.5em 2em;
+  text-align: center;
+  -webkit-box-shadow: #f98 1px 3px 4px;
+          box-shadow: #f98 1px 3px 4px;
+  cursor: pointer;
+}
+
+nav p:hover {
+  background-color: #dda60487;
+  -webkit-box-shadow: inset #f98 1px 3px 4px;
+          box-shadow: inset #f98 1px 3px 4px;
+}
+/*# sourceMappingURL=styles.css.map */

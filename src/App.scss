@@ -1,0 +1,49 @@
+@import './variables';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container-app {
+    display: grid;
+    grid-template-columns: auto 75% auto;
+    min-height: 100Vh;
+}
+
+.container {
+    background-color: #57a1a966;
+    padding-top: 6rem;
+}
+
+#fondo {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+section.Home {
+    text-align: center;
+
+    h2 {
+        font-family: $font-Titulo;
+        font-size: 3em;
+    }
+
+    img.avatar {
+        width: 40%;
+        margin: auto;
+    }
+}
+
+section.Container {
+    h2 {
+        font-family: $font-Titulo;
+        font-size: 4em;
+        text-align: center;
+    }
+}
+
+

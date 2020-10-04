@@ -1,0 +1,25 @@
+@import '../../variables';
+
+div.SectionButton {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0.3rem;
+    margin-right: 4rem;
+
+    p {
+        margin: 0em 1em;
+        background: $boton-fondo;
+        background-color: #ecf3c8;
+        padding: 0.5em 1em;
+        border-radius: 1em;
+        box-shadow: inset #f98 -2px -2px 4px 2px;
+        cursor: pointer;
+        font-size: 0.8rem;
+
+        &:hover {
+            background-color: azure;
+            box-shadow: inset #f98 2px 2px 4px 2px;
+        }
+    }
+}
+

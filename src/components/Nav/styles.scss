@@ -1,0 +1,13 @@
+@import '../../variables';
+
+nav {
+    margin-top: 10vw;
+    position: fixed;
+    font-size: 1vw !important;
+    margin-left: 1rem;
+    width: 10vw;
+
+    p {
+        @include boton;
+    }
+}
