@@ -3,58 +3,78 @@ import React, { useState,useContext } from 'react'
 import ThemesCategoriesContext from 'context/ThemesCategoriesContext'
 import { Link } from 'wouter';
 
-function TableRowWritten({ written }) {
-
-    const [writtenState, setWrittenState] = useState(written);
+function TableRowWritten({ written,writtens,estatus }) {
+    
+    let {titulo,_id,categoria,genero,like,comentario,estado} = written
+    if(genero._id) genero = genero._id
+    
+    const [writtenState, setWrittenState] = useState({titulo,_id,genero,categoria,like,comentario,estado});
     const { themes } = useContext(ThemesCategoriesContext)
 
-    const handleInputChange = event => {
-console.log(event.target.value);
-        if(event.target.name === 'categoria'){
-
-            setWrittenState({
-                ...writtenState,
-                genero:{
-                    ...writtenState.genero,
-                    _id: event.target.value
-                }
-            });
-
-        }else{
-
-            setWrittenState({
-                ...writtenState,
-                [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value
-            });
-
-        }
+    const handleInputChange = event => {        
         
+        writtenState[event.target.name] = event.target.type === 'checkbox' ? event.target.checked : event.target.value
+
+        setWrittenState({
+            ...writtenState,
+            [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value
+        });
+
+        for (let i = 0; i < estatus.length; i++) {
+
+            if(estatus[i].id === writtenState._id){
+                
+                estatus[i].estado = true
+                writtens[i]=writtenState
+                break
+            
+            }
+        }
+        /* estado.find(e => {
+            if(e.id === writtenState._id){
+                e.estado = true
+                return true
+            }
+        }) */
+
     }
 
     if(!writtenState)
     return <></>
 
     return <>
-        <Link to={`/admin/written/${writtenState._id}`}>
-            <tr>
-                <td>
-                    <input type='text' name='titulo' value={writtenState.titulo} onChange={handleInputChange} />
-                </td>
-                <td>
-                    <select name='categoria' value={writtenState.genero._id} onChange={handleInputChange}>
-                        {
-                            themes.map(e => <option key={e._id} value={e._id} >{e.categoria}</option> )
-                        }
-                    </select>
-                </td>
-                <td>categoria</td>
-                <td>{writtenState.like.length}</td>
-                <td>{writtenState.comentario.length}</td>
-                <td>
-                    <input type='checkbox' name='estatus' checked={writtenState.estatus} onChange={handleInputChange} />
-                </td>
-            </tr>
-        </Link>
+        <tr>
+            <td>
+                <input type='text' name='titulo' value={writtenState.titulo} onChange={handleInputChange} />
+            </td>
+            <td>
+                <select name='genero' value={writtenState.genero} onChange={handleInputChange}>
+                    {
+                        themes.map(e => <option key={e._id} value={e._id} >{e.categoria}</option> )
+                    }
+                </select>
+            </td>
+            <td>
+                <div>
+                    {
+                        writtenState.categoria.map(e => <p key={e._id}>{e.genero}</p>)
+                    }
+                </div>
+            </td>
+            <td>{writtenState.like.length}</td>
+            <td>{writtenState.comentario.length}</td>
+            <td>
+                <input type='checkbox' name='estado' checked={writtenState.estado} onChange={handleInputChange} />
+            </td>
+            <td>
+                <Link to={`/admin/written/${writtenState._id}`}>
+                    <p>
+                        <i className="fas fa-pencil-alt"></i>
+                    </p>
+                </Link>
+                
+            </td>
+        </tr>
     </>
 }
 

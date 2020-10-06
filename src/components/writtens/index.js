@@ -7,7 +7,7 @@ console.log(writtens);
     return <>
         {
             (writtens.length === 0)? <p>En proseso de escribir</p> :
-            writtens.map(written => <Written key={written._id} written={written} /> )
+        writtens.map(written => written.estado?<Written key={written._id} written={written} />: '' )
         }
     </>
 }

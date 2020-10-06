@@ -15,7 +15,6 @@ import Admin from 'pages/Admin';
 import EditAdmin from 'pages/EditAdmin'
 import EditNewWritten from 'components/admin/CreateAdmin/EditNewWritten'
 
-
 function App() {
 
   return (
@@ -30,7 +29,8 @@ function App() {
           <main className='container'>
             <Route path='/' component={Home} />
             <Route path='/admin' component={Admin} />
-            <Route path='/admin/:route' component={EditAdmin} />
+            <Route path='/admin/edit/:route' component={EditAdmin} />
+            <Route path='/admin/newWritten' component={EditNewWritten} />
             <Route path='/admin/written/:route' component={EditNewWritten} />
             <Route path='/writtens/:route' component={Container} />
           </main>

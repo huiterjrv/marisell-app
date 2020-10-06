@@ -1,7 +1,18 @@
-import React from 'react'
-import TableRowKidn from './TableRowKind'
+import React, { useState,useEffect } from 'react'
 
-function TableKind ({ kinds }) {
+import TableRowKidn from './TableRowKind'
+import getApi from 'services/getApi'
+
+function TableKind ({ route }) {
+
+    const [kinds, setkinds] = useState([]);
+
+    useEffect(() => {
+
+        getApi({rout:route})
+        .then( res => setkinds(res))
+        
+    }, [route]);
 
     return <>
         <table className="w3-table w3-bordered w3-hoverable">
