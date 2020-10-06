@@ -1,9 +1,9 @@
 import React,{ useEffect,useState} from 'react'
 
 import getApi from 'services/getApi'
-import Category from 'components/CreateAdmin/Category'
-import Kind from 'components/CreateAdmin/Kind'
-import Written from 'components/CreateAdmin/Written'
+import Category from 'components/admin/CreateAdmin/Category'
+import Kind from 'components/admin/CreateAdmin/Kind'
+import Written from 'components/admin/CreateAdmin/Written'
 
 function CreateWritten ({ params }) {
 

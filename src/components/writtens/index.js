@@ -1,6 +1,6 @@
 import React, {} from 'react'
 
-import Written from '../Written'
+import Written from './Written'
 
 function Writtens ({writtens}) {
 console.log(writtens);

@@ -1,11 +1,11 @@
 import { useEffect,useContext } from 'react'
 import getApi from 'services/getApi'
 
-import ThemesContext from 'context/ThemesContext'
+import ThemesCategoriesContext from 'context/ThemesCategoriesContext'
 
 export function getWrittens({rout,id,theme,params}) {
 
-    const {themes, setThemes} = useContext(ThemesContext)
+    const { themes } = useContext(ThemesCategoriesContext)
     console.log(themes);
 
     const idTheme = () => {
