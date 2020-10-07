@@ -1,36 +1,26 @@
-import React,{ useEffect,useState} from 'react'
+import React from 'react'
 
-import getApi from 'services/getApi'
-import Category from 'components/CreateAdmin/Category'
-import Kind from 'components/CreateAdmin/Kind'
-import Written from 'components/CreateAdmin/Written'
+import Category from 'components/admin/CreateAdmin/Category'
+import Kind from 'components/admin/CreateAdmin/Kind'
+import Written from 'components/admin/CreateAdmin/Written'
 
 function CreateWritten ({ params }) {
-
-    const [content, setContent] = useState([]);
-
-    useEffect(() => {
-
-        getApi({rout:params.route})
-        .then( res => setContent(res))
-        
-    }, [params.route]);
 
     switch (params.route) {
 
         case 'written':
-                return <Written writtens={content} />
+            return <Written route={params.route} />
 
         case 'kind':
-                return <Kind kinds={content} />
+            return <Kind route={params.route} />
 
         case 'category':
-                return <Category categories={content} />
+            return <Category route={params.route} />
     
         default:
-                return <>
-                    <p>unmmm......</p>
-                </>
+            return <>
+                <p>unmmm......</p>
+            </>
     }
     
 }

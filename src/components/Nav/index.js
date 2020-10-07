@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'wouter'
 import './styles.css'
 
-import {useThemes} from 'hooks/useThemes'
+import { useUpdateContext } from 'hooks/updateContext'
 
 function NavThemes () {
 
-    const { themes } = useThemes({rout:'kind'})
+    const { themes } = useUpdateContext()
 
     return <>
         <nav className='nav-themes'>

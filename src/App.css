@@ -73,4 +73,10 @@ section.Admin h2 {
   font-size: 4em;
   text-align: center;
 }
+
+section.Admin h3 {
+  font-family: "Special Elite", cursive;
+  font-size: 4em;
+  text-align: center;
+}
 /*# sourceMappingURL=App.css.map */
