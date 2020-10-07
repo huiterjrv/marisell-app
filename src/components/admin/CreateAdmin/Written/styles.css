@@ -1,0 +1,121 @@
+section.table-written svg {
+  width: 100%;
+}
+
+section.table-written input {
+  background-color: rgba(0, 0, 255, 0);
+  border: none;
+  border-radius: 0em 0em 12em 2em;
+  border-bottom: aquamarine solid 3px;
+  margin: auto;
+  text-align: center;
+  font-size: 1em;
+  font-family: "Special Elite", cursive;
+}
+
+section.table-written input:focus {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  outline: none;
+}
+
+section.table-written div.select select {
+  background-color: #00000000;
+  border: none;
+  border-bottom: aquamarine solid 3px;
+  cursor: pointer;
+}
+
+section.table-written div.select select option {
+  color: #3a3434;
+  background-color: #0022ff6e;
+  cursor: pointer;
+}
+
+section.table-written div.select select:focus {
+  background: rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+section.table-written table {
+  width: 80%;
+  margin: auto;
+}
+
+section.table-written table thead th {
+  background-color: #481f8fa1;
+}
+
+section.table-written table thead th:first-child {
+  border-top-left-radius: 12em 3em;
+}
+
+section.table-written table thead th:last-child {
+  border-top-right-radius: 12em 3em;
+}
+
+section.table-written table tbody tr td input[type='checkbox'] {
+  cursor: pointer;
+}
+
+section.table-written table tbody tr td i {
+  border-radius: 3em;
+  width: 2em;
+  height: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+section.table-written table tbody tr td i:hover {
+  background-color: violet;
+}
+
+section.table-written table tbody tr:hover {
+  background-color: #c7b99587;
+}
+
+section.table-written table tfoot {
+  background-color: #7cfc00bf;
+  cursor: pointer;
+}
+
+section.table-written table tfoot:hover {
+  background-color: #e1e13f87;
+}
+
+section.table-written table th, section.table-written table td {
+  text-align: center;
+}
+
+section.table-written p.button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-top: 2em;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-color: #e1e13f87;
+  border-radius: 1em;
+  padding: 0.5em;
+  font: bold 1.5em sans-serif;
+  border: 2px solid #0d4c6b;
+  cursor: pointer;
+}
+
+section.table-written p.button:hover, section.table-written p.button:focus {
+  outline: none;
+  background: #3d1717ba;
+  color: #fff;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+}
+/*# sourceMappingURL=styles.css.map */

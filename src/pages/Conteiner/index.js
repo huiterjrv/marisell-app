@@ -6,8 +6,11 @@ import WrittenList from 'components/Writtens'
 function Container ({ params }) {
 
     const [writtens, setWrittens] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
+
+        setLoading(true)
 
         getApi({rout:'kind'}).then(async res => {
 
@@ -17,7 +20,10 @@ function Container ({ params }) {
 
             return getApi({rout:'written',theme:theme._id})
 
-        }).then(res => setWrittens(res))
+        }).then(res => { 
+            setWrittens(res)
+            setLoading(false)
+        })
 
     },[params.route])
     
@@ -25,7 +31,7 @@ function Container ({ params }) {
     return <>
         <section className='Container'>
             <h2>{params.route}</h2>
-            <WrittenList writtens={writtens} />
+            <WrittenList writtens={writtens} loading={loading} />
         </section>
     </>
 }

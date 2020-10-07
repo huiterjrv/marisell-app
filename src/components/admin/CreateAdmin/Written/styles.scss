@@ -1,0 +1,127 @@
+@import '../../../../variables';
+
+section.table-written {
+
+    svg {
+        width: 100%;
+    }
+
+    input {
+        background-color: rgba(0, 0, 255, 0);
+        border: none;
+        border-radius: 0em 0em 12em 2em;
+        border-bottom: aquamarine solid 3px;
+        margin: auto;
+        text-align: center;
+        font-size: 1em;
+        font-family: $font-Escrito;
+
+        &:focus {
+            background   : rgba(0,0,0,.1);
+            border-radius: 5px;
+            outline      : none;
+        }
+    }
+
+    div.select select{
+        background-color: #00000000;
+        border: none;
+        border-bottom: aquamarine solid 3px;
+        cursor: pointer;
+
+        option {
+        color: #3a3434;
+        background-color:#0022ff6e;
+        cursor: pointer;
+        }
+
+        &:focus {
+            background   : rgba(0,0,0,.1);
+            outline      : none;
+        }
+    }
+
+    table {
+        width: 80%;
+        margin: auto;
+
+        thead {
+            th {
+                background-color: #481f8fa1;
+            }
+
+            th:first-child {
+                border-top-left-radius: 12em 3em;
+            }
+
+            th:last-child {
+                border-top-right-radius: 12em 3em;
+            }
+            
+        }
+
+        tbody {
+            tr {
+                td {
+                    input[type='checkbox'] {
+                        cursor: pointer;
+                    }
+                    i{
+                        border-radius: 3em;
+                        width: 2em;
+                        height: 2em;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: violet;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: #c7b99587;
+                }
+            }
+        }
+
+        tfoot {
+            background-color: #7cfc00bf;
+            cursor: pointer;
+            &:hover{
+                background-color: #e1e13f87;
+            }
+        }
+
+        th,td {
+            text-align: center;
+        }
+
+    }
+
+    p.button {
+        width: fit-content;
+        margin: auto;
+        margin-top: 2em;
+        transition: .3s;
+        background-color: #e1e13f87;       
+        border-radius: 1em;
+        padding      : 0.5em;
+        font         : bold 1.5em sans-serif;
+        border       : 2px solid #0d4c6b;
+        cursor       : pointer;
+        
+            
+        &:hover,&:focus {
+            outline   : none;
+            background: #3d1717ba;
+            color   : #fff;
+            transform: rotate(2deg);
+            
+        }
+    }
+
+    
+    
+}

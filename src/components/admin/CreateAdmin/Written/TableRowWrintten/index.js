@@ -3,7 +3,7 @@ import React, { useState,useContext } from 'react'
 import ThemesCategoriesContext from 'context/ThemesCategoriesContext'
 import { Link } from 'wouter';
 
-function TableRowWritten({ written,writtens,estatus }) {
+function TableRowWritten({ written,writtens,estatus,updata,setUpdata }) {
     
     let {titulo,_id,categoria,genero,like,comentario,estado} = written
     if(genero._id) genero = genero._id
@@ -30,6 +30,9 @@ function TableRowWritten({ written,writtens,estatus }) {
             
             }
         }
+
+        if(!updata) setUpdata(true)
+
         /* estado.find(e => {
             if(e.id === writtenState._id){
                 e.estado = true
@@ -48,11 +51,13 @@ function TableRowWritten({ written,writtens,estatus }) {
                 <input type='text' name='titulo' value={writtenState.titulo} onChange={handleInputChange} />
             </td>
             <td>
-                <select name='genero' value={writtenState.genero} onChange={handleInputChange}>
-                    {
-                        themes.map(e => <option key={e._id} value={e._id} >{e.categoria}</option> )
-                    }
-                </select>
+                <div className='select'>
+                    <select name='genero' value={writtenState.genero} onChange={handleInputChange}>
+                        {
+                            themes.map(e => <option key={e._id} value={e._id} >{e.categoria}</option> )
+                        }
+                    </select>
+                </div>
             </td>
             <td>
                 <div>
@@ -72,7 +77,6 @@ function TableRowWritten({ written,writtens,estatus }) {
                         <i className="fas fa-pencil-alt"></i>
                     </p>
                 </Link>
-                
             </td>
         </tr>
     </>

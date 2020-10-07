@@ -1,4 +1,5 @@
 import React, { useContext,useState,useEffect } from 'react'
+import './styles.css'
 
 import ThemesCategoriesContext from 'context/ThemesCategoriesContext'
 import getApi from 'services/getApi'
@@ -33,13 +34,15 @@ function EditNewWritten ({ params }) {
                 'Accept':'application/json',
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify({
-                ...written,
-                usuario: written.usuario?written.usuario._id:null,
-                creado: written.creado || new Date().toJSON(),
-                actualizado: new Date().toJSON(),
-                estatus:true
-            })   
+            body:{
+                message:JSON.stringify({
+                    ...written,
+                    usuario: written.usuario?written.usuario._id:null,
+                    creado: written.creado || new Date().toJSON(),
+                    actualizado: new Date().toJSON(),
+                    estatus:true
+                })   
+            } 
         }
 
         if (params.route) {
@@ -133,18 +136,30 @@ function EditNewWritten ({ params }) {
 
     }
 
+    const Edit = () => (
+        <>
+            editar<i className="fas fa-pencil-alt"></i>
+        </>
+    )
+
+    const Crars = () => (
+        <>
+            crear <i className="fas fa-plus-circle"></i>
+        </>
+    )
+
     return <>
-        <section>
+        <section className='edit-new-written'>
             <label htmlFor='titel'>
-                <h2>titulo</h2>
+                <h2>Titulo</h2>
             </label>
             <input type='text' id='titel' name='titulo' onChange={handleChange} value={written.titulo?written.titulo:''} />
             <label htmlFor='chapter' >
-                <h4>capitulo: </h4>
+                <h4>capitulo</h4>
             </label>
             <input type='text' name='capitulo' id='chapter' onChange={handleChange} value={written.capitulo?written.capitulo:''}/>
             <h4>genero</h4>
-            <div>
+            <div className='box-themes'>
                 {
                     themes.map( e => <p key={e._id} data-id={e._id} className={(opacaity.genero && (opacaity.genero ===e._id))?'':'w3-opacity'} onClick={handleClickGenero}>
                         {e.categoria}
@@ -153,7 +168,7 @@ function EditNewWritten ({ params }) {
                 }
             </div>
             <h4>categorias</h4>
-            <div>
+            <div className='box-category'>
                 {
                     categories.map( e => <p key={e._id} data-id={e._id} className={((opacaity.categoria.some(Cat => Cat === e._id)))?'':'w3-opacity'} style={{backgroundColor:e.background,color:e.color}} onClick={handleClickCategory}>{e.genero}</p> )
                 }
@@ -162,7 +177,7 @@ function EditNewWritten ({ params }) {
                 <h4>escrito</h4>
             </label>
             <textarea id='text' name='texto' onChange={handleChange} value={written.texto?written.texto:''} ></textarea>
-            <button onClick={handleSubmit} >{params.route?'editar':'crear'}</button>
+            <p className='botton' onClick={handleSubmit} >{params.route?<Edit />: <Crars />}</p>
         </section>
     </>
 }
